@@ -5,490 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>[YOUR NAME] | [YOUR NICHE] Travel Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    /* ═══════════════════════════════════════
-       TRAVEL AGENT STARTER TEMPLATE
-       Built in: Before You Book the Trip, Build the Bag™
-       Customize only the bracketed [FIELDS] and colors below.
-    ═══════════════════════════════════════ */
-
-    :root {
-      /* ═══════════════════════════════════════
-         YOUR BRAND COLORS
-         Current palette: Amalfi Coast
-         Primary  → Royal Navy   #263B6A
-         Accent   → Lemon Yellow #FAE251
-         Swap these two to match YOUR brand.
-         The accent-dim below auto-tints from your accent.
-      ═══════════════════════════════════════ */
-      --primary:    #263B6A;      /* Royal navy */
-      --accent:     #FAE251;      /* Lemon yellow */
-      --green:      #75B06F;      /* Green leaf — use for tags, pills, highlights */
-
-      /* Leave the rest as-is */
-      --white:      #FFF6F6;      /* White silk */
-      --off-white:  #FDF9F0;
-      --text:       #1A1A1A;
-      --text-muted: #4A4A4A;
-      --text-light: #9A9A9A;
-      --border:     rgba(38,59,106,0.12);
-      --card:       #FFFFFF;
-      --accent-dim: rgba(250,226,81,0.18);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.65;
-    }
-
-    /* ─── NAVIGATION ─── */
-    nav {
-      background: var(--primary);
-      padding: 18px 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-brand {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.02em;
-    }
-
-    .nav-cta {
-      background: var(--accent);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .nav-cta:hover { opacity: 0.85; }
-
-    /* ─── HERO ─── */
-    .hero {
-      background: var(--primary);
-      padding: 80px 1.5rem 72px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: var(--white);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-
-    .hero-eyebrow {
-      display: inline-block;
-      border: 1px solid rgba(201,168,76,0.45);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 100px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      font-weight: 600;
-      line-height: 1.15;
-      color: var(--white);
-      margin-bottom: 20px;
-      /* REPLACE THIS LINE with your positioning statement from Day 1 */
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: clamp(15px, 2vw, 17px);
-      color: rgba(255,255,255,0.7);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      font-weight: 300;
-      line-height: 1.75;
-      /* REPLACE: One sentence about who you help and what experience you create */
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--primary);
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 15px 36px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.15s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.88;
-      transform: translateY(-1px);
-    }
-
-    /* ─── ABOUT ─── */
-    .about {
-      padding: 80px 1.5rem 72px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .about h2 {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 20px;
-    }
-
-    .about h2 em { font-style: italic; color: var(--primary); }
-
-    .about p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      font-weight: 300;
-      max-width: 580px;
-      /* REPLACE: Your 2-3 sentence origin story (short version from Day 2) */
-    }
-
-    .about p + p { margin-top: 16px; }
-
-    /* ─── HOW IT WORKS ─── */
-    .process {
-      background: var(--off-white);
-      padding: 72px 1.5rem;
-    }
-
-    .process-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    @media (max-width: 600px) {
-      .steps { grid-template-columns: 1fr; }
-    }
-
-    .step {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 28px 22px;
-      position: relative;
-    }
-
-    .step-num {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--accent-dim);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .step-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--primary);
-    }
-
-    .step p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      font-weight: 300;
-      /* REPLACE each step with your 3-step inquiry-to-booking process */
-    }
-
-    /* ─── TRIP TYPES ─── */
-    .trips {
-      padding: 72px 1.5rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .trip-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .trip-pill {
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 100px;
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      cursor: default;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .trip-pill:hover {
-      background: var(--accent-dim);
-      border-color: var(--green);
-      color: var(--primary);
-    }
-
-    /* ─── TRUST / PROOF ─── */
-    .trust {
-      background: var(--primary);
-      padding: 72px 1.5rem;
-    }
-
-    .trust-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .trust .section-label { color: var(--accent); }
-
-    .trust h2 {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .trust-sub {
-      font-size: 15px;
-      color: rgba(255,255,255,0.6);
-      font-weight: 300;
-      margin-bottom: 36px;
-      max-width: 500px;
-      /* REPLACE: Briefly describe your experience, clients served, or niche specialty */
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    @media (max-width: 520px) {
-      .proof-grid { grid-template-columns: 1fr; }
-    }
-
-    .proof-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-      padding: 22px 20px;
-    }
-
-    .proof-quote {
-      font-family: 'Nunito', sans-serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.65;
-      margin-bottom: 12px;
-      /* REPLACE: Client review or testimonial */
-    }
-
-    .proof-name {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    /* ─── INQUIRY FORM ─── */
-    .inquiry {
-      padding: 80px 1.5rem;
-      max-width: 620px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .inquiry h2 {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .inquiry h2 em { font-style: italic; color: var(--accent); }
-
-    .inquiry-sub {
-      font-size: 15px;
-      color: var(--text-muted);
-      font-weight: 300;
-      margin-bottom: 36px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .form-box {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 36px 32px;
-      text-align: left;
-    }
-
-    @media (max-width: 480px) {
-      .form-box { padding: 28px 18px; }
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-
-    .field label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-light);
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      color: var(--text);
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      font-weight: 300;
-      padding: 12px 14px;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-      width: 100%;
-    }
-
-    .field input::placeholder,
-    .field textarea::placeholder { color: #BBBBBB; }
-
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--accent);
-    }
-
-    .field textarea { resize: vertical; min-height: 100px; }
-
-    .field-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    @media (max-width: 480px) {
-      .field-row { grid-template-columns: 1fr; }
-    }
-
-    .fee-note {
-      background: var(--accent-dim);
-      border-left: 3px solid var(--green);
-      padding: 14px 16px;
-      border-radius: 2px;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .fee-note strong { color: var(--primary); }
-
-    .form-submit { width: 100%; margin-top: 8px; }
-
-    .form-fine {
-      text-align: center;
-      margin-top: 14px;
-      font-size: 12px;
-      color: var(--text-light);
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      background: var(--off-white);
-      padding: 40px 1.5rem;
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .footer-tagline {
-      font-size: 12px;
-      color: var(--text-light);
-      letter-spacing: 0.06em;
-    }
-  </style>
+  <link rel="stylesheet" href="travel-agent-starter-style.css" />
 </head>
 <body>
 
@@ -536,8 +53,8 @@
   <section class="process">
     <div class="process-inner">
       <div class="section-label">How It Works</div>
-      <h2 style="font-family:'Nunito',sans-serif; font-size:clamp(1.5rem,4vw,2.2rem); font-weight:600; line-height:1.25; margin-bottom:8px;">Three steps. Zero overwhelm.</h2>
-      <p style="font-size:15px; color:var(--text-muted); font-weight:300; max-width:500px; line-height:1.75; margin-bottom:0;">
+      <h2>Three steps. Zero overwhelm.</h2>
+      <p class="process-sub">
         From "I want to travel" to boarding the plane — here's exactly what working with me looks like.
       </p>
       <div class="steps">
@@ -566,8 +83,8 @@
   ════════════════════════════════════ -->
   <section class="trips">
     <div class="section-label">What I Book</div>
-    <h2 style="font-family:'Nunito',sans-serif; font-size:clamp(1.5rem,4vw,2.2rem); font-weight:600; line-height:1.25; margin-bottom:10px;">Your trip. Done right.</h2>
-    <p style="font-size:15px; color:var(--text-muted); font-weight:300; max-width:500px; line-height:1.75;">
+    <h2>Your trip. Done right.</h2>
+    <p class="trips-sub">
       [Optional: One sentence about the range of trips you specialize in, or the vibe of your clientele.]
     </p>
     <div class="trip-pills">
@@ -592,11 +109,11 @@
       <div class="section-label">What Clients Say</div>
       <h2>The experience speaks<br>for itself.</h2>
       <p class="trust-sub">
-        [Your credibility line: Years of experience, number of clients, certifications, or a short trust-building statement that comes from Day 3.]
+        [Your credibility line: Years of experience, number of clients, certifications, or a short trust-building statement.]
       </p>
       <div class="proof-grid">
         <div class="proof-card">
-          <p class="proof-quote">"[Client testimonial. Keep it authentic — real words, even if informal. Screenshot quotes work great here. Replace this whole sentence.]"</p>
+          <p class="proof-quote">"[Client testimonial. Keep it authentic — real words, even if informal. Screenshot quotes work great here.]"</p>
           <div class="proof-name">— [Client Name, Trip Type]</div>
         </div>
         <div class="proof-card">
@@ -609,8 +126,10 @@
 
   <!-- ════════════════════════════════════
        INQUIRY FORM
-       Built for Day 4 — connect Formspree
-       to wire this to your email
+       Connect Formspree to wire to your email.
+       Search for YOURFORMSPREE and replace
+       with your actual Formspree form ID.
+       Example: https://formspree.io/f/xyzabcd1
   ════════════════════════════════════ -->
   <section class="inquiry" id="inquiry">
     <div class="section-label">Start Here</div>
@@ -620,37 +139,38 @@
     </p>
 
     <div style="background:#e8f5e9; border:1.5px dashed #75B06F; border-radius:6px; padding:12px 16px; margin-bottom:16px; font-size:12px; color:#1b5e20; line-height:1.6;">
-        <strong>✏️ TEMPLATE NOTE:</strong> To activate this form, press <strong>Ctrl+F</strong> (Windows) or <strong>Cmd+F</strong> (Mac) and search for <strong>YOURFORMSPREE</strong> — replace it with your actual Formspree form ID. Example: <code>https://formspree.io/f/xyzabcd1</code>
-      </div>
+      <strong>✏️ TEMPLATE NOTE:</strong> To activate this form, press <strong>Ctrl+F</strong> (Windows) or <strong>Cmd+F</strong> (Mac) and search for <strong>YOURFORMSPREE</strong> — replace it with your actual Formspree form ID. Example: <code>https://formspree.io/f/xyzabcd1</code>
+    </div>
+
     <form action="https://formspree.io/f/YOURFORMSPREE" method="POST" class="form-box">
       <div class="field-row">
         <div class="field">
           <label>First Name</label>
-          <input type="text" placeholder="Your first name" />
+          <input type="text" name="first_name" placeholder="Your first name" />
         </div>
         <div class="field">
           <label>Last Name</label>
-          <input type="text" placeholder="Your last name" />
+          <input type="text" name="last_name" placeholder="Your last name" />
         </div>
       </div>
       <div class="field">
         <label>Best Email</label>
-        <input type="email" placeholder="I'll reach out here" />
+        <input type="email" name="email" placeholder="I'll reach out here" />
       </div>
       <div class="field-row">
         <div class="field">
           <label>Where Are You Thinking?</label>
-          <input type="text" placeholder="Destination, cruise, not sure yet..." />
+          <input type="text" name="destination" placeholder="Destination, cruise, not sure yet..." />
         </div>
         <div class="field">
           <label>When?</label>
-          <input type="text" placeholder="Summer 2025, flexible..." />
+          <input type="text" name="travel_dates" placeholder="Summer 2025, flexible..." />
         </div>
       </div>
       <div class="field-row">
         <div class="field">
           <label>Travelers</label>
-          <select>
+          <select name="travelers">
             <option value="">Select</option>
             <option>Just me</option>
             <option>2 people</option>
@@ -661,7 +181,7 @@
         </div>
         <div class="field">
           <label>Budget Per Person</label>
-          <select>
+          <select name="budget">
             <option value="">Select</option>
             <option>Under $1,000</option>
             <option>$1,000 to $2,500</option>
@@ -673,10 +193,8 @@
       </div>
       <div class="field">
         <label>What's on Your Mind?</label>
-        <textarea placeholder="What's the occasion? What do you want this trip to feel like? Any must-haves?"></textarea>
+        <textarea name="message" placeholder="What's the occasion? What do you want this trip to feel like? Any must-haves?"></textarea>
       </div>
-
-
 
       <div style="background:#fffbe6; border:1.5px dashed #FAE251; border-radius:6px; padding:12px 16px; margin-bottom:10px; font-size:12px; color:#5a4a00; line-height:1.6;">
         <strong>✏️ TEMPLATE NOTE:</strong> The planning fee section below is <strong>optional.</strong> Keep it if you charge a fee, update the amount to match yours, or delete the whole block if you don't charge one.
@@ -687,7 +205,6 @@
 
       <button type="submit" class="btn-primary form-submit">Send My Inquiry</button>
       <p class="form-fine">No guessing on budget or dates needed. I'll sort the details with you. Expect a reply within 48 hours.</p>
-    </div>
     </form>
   </section>
 
@@ -697,6 +214,10 @@
   <footer>
     <div class="footer-brand">[Your Business Name]</div>
     <p class="footer-tagline">[Your Name] &nbsp;·&nbsp; [Your Niche] Travel Specialist &nbsp;·&nbsp; [Your City or Virtual]</p>
+    <div class="footer-links">
+      <a href="travel-agent-starter-privacy.html">Privacy Policy</a>
+      <a href="travel-agent-starter-terms.html">Terms of Service</a>
+    </div>
   </footer>
 
 </body>
