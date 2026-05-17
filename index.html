@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before You Build the Bag™ | Free 2-Day Live Training for Travel Agents</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.18);
+      --black: #0A0A0A;
+      --off-black: #111111;
+      --card-bg: #161616;
+      --border: rgba(201,168,76,0.25);
+      --text: #F5F0E8;
+      --text-muted: rgba(245,240,232,0.6);
+      --text-dim: rgba(245,240,232,0.38);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background-color: var(--black); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .bar { background: var(--gold); color: var(--black); text-align: center; padding: 10px 1rem; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero { background: var(--off-black); padding: 80px 1.25rem 70px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
+    .hero-tag { display: inline-block; border: 1px solid var(--border); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 700; line-height: 1.12; margin-bottom: 10px; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-campaign { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--text-muted); margin-bottom: 24px; }
+    .hero-sub { font-size: clamp(15px, 2vw, 17px); color: var(--text-muted); max-width: 560px; margin: 0 auto 20px; line-height: 1.75; font-weight: 300; }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+    .hero-requirement { display: block; background: var(--off-black); border: 2px solid var(--gold); border-radius: 8px; padding: 20px 24px; font-size: 14px; color: var(--text-muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.75; text-align: left; animation: pulseGlow 2.5s ease-in-out infinite; }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0px rgba(201,168,76,0); border-color: var(--gold); }
+      50% { box-shadow: 0 0 18px rgba(201,168,76,0.55), 0 0 36px rgba(201,168,76,0.2); border-color: var(--gold-light); }
+    }
+    .hero-requirement strong { color: var(--gold); }
+    .date-strip { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .date-pill { background: var(--gold-dim); border: 1px solid var(--border); color: var(--gold-light); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 18px; border-radius: 100px; }
+    .btn-primary { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 40px; border-radius: 2px; text-decoration: none; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .free-note { margin-top: 14px; font-size: 12px; color: var(--text-dim); letter-spacing: 0.06em; }
+    .section { padding: 72px 1.25rem; max-width: 780px; margin: 0 auto; }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 600; line-height: 1.25; margin-bottom: 24px; }
+    .section h2 em { font-style: italic; color: var(--gold); }
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+    @media (max-width: 520px) { .pain-grid { grid-template-columns: 1fr; } }
+    .pain-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); padding: 20px; border-radius: 4px; font-size: 15px; color: var(--text); line-height: 1.6; font-style: italic; font-family: 'Playfair Display', serif; }
+    .pain-card::before { content: '"'; display: block; color: var(--gold); font-size: 28px; margin-bottom: 4px; font-style: normal; line-height: 1; }
+    .divider { width: 100%; height: 1px; background: var(--border); max-width: 780px; margin: 0 auto; }
+    .build-section { padding: 72px 1.25rem; max-width: 780px; margin: 0 auto; }
+    .days-stack { margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
+    .day-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); border-left: 3px solid var(--gold); border-radius: 4px; padding: 28px; display: flex; gap: 24px; align-items: flex-start; }
+    .day-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-dim); line-height: 1; min-width: 40px; }
+    .day-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+    .day-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; }
+    .day-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .day-bullets li { font-size: 14px; color: var(--text-muted); padding-left: 16px; position: relative; line-height: 1.6; }
+    .day-bullets li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 9px; top: 4px; }
+    .tools-note { margin-top: 14px; font-size: 12px; color: var(--text-dim); font-style: italic; }
+    .offer-section { background: var(--off-black); padding: 72px 1.25rem; }
+    .offer-inner { max-width: 780px; margin: 0 auto; }
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+    @media (max-width: 580px) { .offer-grid { grid-template-columns: 1fr; } }
+    .offer-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 28px 24px; }
+    .offer-card.featured { border-color: var(--gold); position: relative; }
+    .offer-badge { position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--black); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
+    .offer-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 4px; }
+    .offer-price { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 16px; }
+    .offer-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .offer-list li { font-size: 14px; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.55; }
+    .offer-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 10px; top: 3px; }
+    .dfy-card { margin-top: 20px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 24px 28px; }
+    .dfy-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .dfy-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+    .dfy-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+    .form-section { padding: 80px 1.25rem; max-width: 620px; margin: 0 auto; text-align: center; }
+    .form-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600; line-height: 1.25; margin-bottom: 12px; }
+    .form-section h2 em { font-style: italic; color: var(--gold); }
+    .form-section p { font-size: 15px; color: var(--text-muted); margin-bottom: 36px; font-weight: 300; }
+    .form-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 36px 32px; text-align: left; }
+    .field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 480px) { .field-group { grid-template-columns: 1fr; } .form-box { padding: 28px 20px; } }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .field label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
+    .field input, .field select { background: var(--off-black); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; color: var(--text); font-family: 'Jost', sans-serif; font-size: 15px; padding: 12px 14px; outline: none; transition: border-color 0.2s; appearance: none; }
+    .field input::placeholder { color: var(--text-dim); }
+    .field input:focus, .field select:focus { border-color: var(--gold); }
+    .field select option { background: var(--off-black); }
+    .replay-upsell { margin-top: 14px; display: flex; align-items: flex-start; gap: 10px; }
+    .replay-upsell input[type="checkbox"] { margin-top: 3px; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+    .replay-upsell label { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    .replay-upsell label strong { color: var(--gold); }
+    .form-submit { width: 100%; margin-top: 24px; }
+    .form-fine { text-align: center; margin-top: 16px; font-size: 12px; color: var(--text-dim); }
+    .site-footer { border-top: 1px solid var(--border); padding: 40px 1.25rem; text-align: center; }
+    .footer-inner { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+    .footer-title { font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; }
+    .footer-copy { font-size: 12px; color: var(--text-dim); line-height: 1.6; max-width: 480px; }
+    .footer-meta { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+    .footer-meta a { color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+    .footer-meta a:hover { opacity: 0.75; }
+  </style>
+</head>
+<body>
+
+  <div class="bar">Free Live Training &nbsp;·&nbsp; May 30 & 31 &nbsp;·&nbsp; Limited Seats</div>
+
+  <section class="hero">
+    <div class="hero-tag">2-Day Live Training for Travel Agents</div>
+    <h1>Build the Brand.<br>Build the <em>Page.</em><br>Leave with Both.</h1>
+    <p class="hero-campaign">Before You Build the Bag™</p>
+    <p class="hero-sub">
+      Two days. Two live builds. You walk out with a brand voice, a positioning statement, and <strong>a real landing page clients can visit.</strong>
+    </p>
+    <div class="hero-requirement">
+      <strong>The agents who come prepared are the ones who leave with a page.</strong> Here's your one thing to do before Day 1:<br><br>
+      Visit <strong>Before You Build the Bag™</strong> to get clear on your niche, audience, and brand direction before we build live together. 🎒
+    </div>
+    <div class="date-strip">
+      <span class="date-pill">May 30 — Day 1: Build the Foundation™</span>
+      <span class="date-pill">May 31 — Day 2: Build the Door™</span>
+    </div>
+    <a href="#register" class="btn-primary">Secure My Free Seat</a>
+    <p class="free-note">100% free. Live on Zoom. Replay available for $27 after.</p>
+  </section>
+
+  <div class="section">
+    <div class="section-label">This Is For You If...</div>
+    <h2>Your business is moving.<br>Your brand <em>isn't keeping up.</em></h2>
+    <p style="color:var(--text-muted);font-size:15px;font-weight:300;max-width:620px;line-height:1.9;">
+      You're posting trips… answering the same questions… sending quotes… and STILL feel like your online presence isn't matching the level of business you're trying to build.
+    </p>
+    <p style="color:var(--text-muted);font-size:15px;font-weight:400;max-width:620px;line-height:1.9;margin-top:16px;">
+      Independent agent. Host agency. Doesn't matter.
+    </p>
+    <p style="color:var(--text-muted);font-size:15px;font-weight:300;max-width:620px;line-height:1.9;margin-top:16px;">
+      If people still have to ask...
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card">"What's the itinerary?"</div>
+      <div class="pain-card">"How much is it?"</div>
+      <div class="pain-card">"How do I sign up?"</div>
+      <div class="pain-card">"Where can I actually see everything you offer?"</div>
+    </div>
+    <p style="color:var(--text-muted);font-size:15px;font-weight:300;max-width:620px;line-height:1.9;margin-top:28px;">
+      …then your brand, messaging, and online setup need work. 👀 That's what we're fixing.
+    </p>
+    <p style="color:var(--text);font-size:16px;font-weight:500;max-width:620px;line-height:1.9;margin-top:16px;">
+      Because deep down… you already KNOW your business deserves to look more established than it does right now. 🔥
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="build-section">
+    <div class="section-label">The 2-Day Live Build Room</div>
+    <h2>You don't just learn it.<br>You <em>build it</em> live.</h2>
+    <p style="color:var(--text-muted);font-size:15px;font-weight:300;max-width:580px;line-height:1.75;margin-top:16px;">
+      Every session is hands-on. You show up, you build, you leave with something real.
+    </p>
+    <div class="days-stack">
+      <div class="day-card">
+        <div class="day-num">01</div>
+        <div class="day-content">
+          <div class="day-label">Day 1 — May 30</div>
+          <div class="day-title">Build the Foundation™</div>
+          <ul class="day-bullets">
+            <li>Train AI on your brand voice</li>
+            <li>Define your niche and ideal audience</li>
+            <li>Build your positioning statement</li>
+            <li>Establish your three brand pillars</li>
+            <li>Create a recognizable content voice</li>
+          </ul>
+          <p class="tools-note">Tools used live: ChatGPT + Claude</p>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">02</div>
+        <div class="day-content">
+          <div class="day-label">Day 2 — May 31</div>
+          <div class="day-title">Build the Door™ Live</div>
+          <ul class="day-bullets">
+            <li>Organize your proof strategically</li>
+            <li>Build your landing page messaging</li>
+            <li>Publish a live page on GitHub</li>
+            <li>Connect your inquiry form with Formspree</li>
+            <li>Leave with a real page clients can visit</li>
+          </ul>
+          <p class="tools-note">Tools used live: GitHub + Formspree</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="offer-section">
+    <div class="offer-inner">
+      <div class="section-label">Your Options</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:600;line-height:1.25;margin-bottom:10px;">Free to attend.<br><em>More available if you want it.</em></h2>
+      <p style="color:var(--text-muted);font-size:15px;font-weight:300;max-width:560px;line-height:1.75;">
+        The live training is always free. But if you want to come back to it — or want your page built for you — here's what's available.
+      </p>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <div class="offer-name">Free Live Seat</div>
+          <div class="offer-price">Free</div>
+          <ul class="offer-list">
+            <li>Both live Zoom sessions</li>
+            <li>Live builds on Day 1 and Day 2</li>
+            <li>AI tools used together in real time</li>
+            <li>Leave with a live page on Day 2</li>
+          </ul>
+        </div>
+        <div class="offer-card featured">
+          <div class="offer-badge">Add On</div>
+          <div class="offer-name">Session Replay</div>
+          <div class="offer-price">$27 — Available After</div>
+          <ul class="offer-list">
+            <li>Full replay of both sessions</li>
+            <li>Go back and implement at your own pace</li>
+            <li>Available within 48 hours after the live sessions end</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dfy-card">
+        <div class="dfy-label">Pitched Live at the End of Day 2</div>
+        <div class="dfy-title">Done-for-You Landing Page</div>
+        <p class="dfy-desc">Not ready to build it yourself? Sabrina builds it for you. Founding price of <strong style="color:var(--gold);">$197</strong> — only available to live attendees at the end of Day 2.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section" id="register">
+    <div class="section-label" style="text-align:center;">Register Now</div>
+    <h2>Two days.<br><em>One decision.</em></h2>
+    <p>Show up. Build it live. Leave with a brand and a page that works.</p>
+    <div class="form-box">
+      <div class="field-group">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name" />
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name" />
+        </div>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" placeholder="Where should I send the Zoom link?" />
+      </div>
+      <div class="field">
+        <label>Are You Independent or Host Agency?</label>
+        <select>
+          <option value="">Select one</option>
+          <option>Independent agent</option>
+          <option>Host agency</option>
+          <option>Just getting started</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Do You Currently Have a Landing Page?</label>
+        <select>
+          <option value="">Select one</option>
+          <option>No — that's why I'm here</option>
+          <option>Yes but it's not working</option>
+          <option>I have a website but no dedicated inquiry page</option>
+          <option>Starting from scratch</option>
+        </select>
+      </div>
+      <div class="replay-upsell">
+        <input type="checkbox" id="replay" />
+        <label for="replay">Yes — notify me when the <strong>Session Replay ($27)</strong> is available. Replays drop within 48 hours after the live sessions end.</label>
+      </div>
+      <button class="btn-primary form-submit">Reserve My Free Seat</button>
+      <p class="form-fine">You'll receive your Zoom link within 24 hours. See you May 30. 🎒</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Elite Tripps™</div>
+      <p class="footer-title">
+        Sabrina Nichols Johnson · AI Content Strategist · Travel Agent Educator
+      </p>
+      <p class="footer-copy">
+        Before You Build the Bag™ is a free 2-day live training for travel agents, happening May 30 & 31.
+      </p>
+      <div class="footer-meta">
+        <span>© 2026 Elite Tripps™</span>
+        <span>·</span>
+        <a href="https://www.elitetripps.com" target="_blank" rel="noopener noreferrer">EliteTripps.com</a>
+        <span>·</span>
+        <a href="#">Contact</a>
+        <span>·</span>
+        <a href="#">Privacy</a>
+        <span>·</span>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
