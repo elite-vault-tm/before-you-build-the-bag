@@ -1,0 +1,608 @@
+/* ═══════════════════════════════════════
+   TRAVEL AGENT STARTER TEMPLATE
+   Built in: Before You Book the Trip, Build the Bag™
+   Customize only the bracketed [FIELDS] and colors below.
+═══════════════════════════════════════ */
+
+:root {
+  /* ═══════════════════════════════════════
+     YOUR BRAND COLORS
+     Current palette: Amalfi Coast
+     Primary  → Royal Navy   #263B6A
+     Accent   → Lemon Yellow #FAE251
+     Swap these two to match YOUR brand.
+     The accent-dim below auto-tints from your accent.
+  ═══════════════════════════════════════ */
+  --primary:    #263B6A;      /* Royal navy */
+  --accent:     #FAE251;      /* Lemon yellow */
+  --green:      #75B06F;      /* Green leaf — use for tags, pills, highlights */
+
+  /* Leave the rest as-is */
+  --white:      #FFF6F6;
+  --off-white:  #FDF9F0;
+  --text:       #1A1A1A;
+  --text-muted: #4A4A4A;
+  --text-light: #9A9A9A;
+  --border:     rgba(38,59,106,0.12);
+  --card:       #FFFFFF;
+  --accent-dim: rgba(250,226,81,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+}
+
+/* ─── NAVIGATION ─── */
+nav {
+  background: var(--primary);
+  padding: 18px 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--primary);
+  padding: 80px 1.5rem 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--white);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  border: 1px solid rgba(201,168,76,0.45);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: rgba(255,255,255,0.7);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ─── ABOUT ─── */
+.about {
+  padding: 80px 1.5rem 72px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+/* On light backgrounds, make section-label readable */
+.about .section-label,
+.trips .section-label,
+.inquiry .section-label,
+.process .section-label {
+  color: var(--primary);
+}
+
+.about h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.about h2 em { font-style: italic; color: var(--primary); }
+
+.about p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 580px;
+}
+
+.about p + p { margin-top: 16px; }
+
+/* ─── HOW IT WORKS ─── */
+.process {
+  background: var(--off-white);
+  padding: 72px 1.5rem;
+}
+
+.process-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.process h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.process-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 600px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px 22px;
+}
+
+.step-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-dim);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ─── TRIP TYPES ─── */
+.trips {
+  padding: 72px 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.trips h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.trips-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.75;
+}
+
+.trip-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.trip-pill {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: default;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.trip-pill:hover {
+  background: var(--accent-dim);
+  border-color: var(--green);
+  color: var(--primary);
+}
+
+/* ─── TRUST / PROOF ─── */
+.trust {
+  background: var(--primary);
+  padding: 72px 1.5rem;
+}
+
+.trust-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.trust .section-label { color: var(--accent); }
+
+.trust h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.trust-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .proof-grid { grid-template-columns: 1fr; }
+}
+
+.proof-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 22px 20px;
+}
+
+.proof-quote {
+  font-family: 'Nunito', sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.proof-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── INQUIRY FORM ─── */
+.inquiry {
+  padding: 80px 1.5rem;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inquiry h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.inquiry h2 em { font-style: italic; color: var(--primary); }
+
+.inquiry-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-box {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 36px 32px;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .form-box { padding: 28px 18px; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  width: 100%;
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: #BBBBBB; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+.field textarea { resize: vertical; min-height: 100px; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr; }
+}
+
+.fee-note {
+  background: var(--accent-dim);
+  border-left: 3px solid var(--green);
+  padding: 14px 16px;
+  border-radius: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.fee-note strong { color: var(--primary); }
+
+.form-submit { width: 100%; margin-top: 8px; }
+
+.form-fine {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--off-white);
+  padding: 40px 1.5rem;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+/* ─── LEGAL PAGES (privacy.html & terms.html) ─── */
+.legal-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 1.5rem 80px;
+}
+
+.legal-page h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.legal-page .legal-date {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.legal-page h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 36px;
+  margin-bottom: 10px;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.legal-page ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.legal-page ul li {
+  margin-bottom: 6px;
+}
+
+.legal-page a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 40px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.legal-back:hover { opacity: 1; }
