@@ -262,51 +262,64 @@
     </div>
   </div>
 
+  <!-- REGISTRATION FORM — Wired to Formspree -->
   <div class="form-section" id="register">
     <div class="section-label" style="text-align:center;">Register Now</div>
     <h2>Two days.<br><em>One decision.</em></h2>
     <p>Show up. Build it live. Leave with a brand and a page that works.</p>
     <div class="form-box">
-      <div class="field-group">
-        <div class="field">
-          <label>First Name</label>
-          <input type="text" placeholder="Your first name" />
+      <form action="https://formspree.io/f/meedqqlb" method="POST">
+
+        <!-- Hidden subject line so emails are easy to identify -->
+        <input type="hidden" name="_subject" value="New Registration — Before You Build the Bag™" />
+
+        <div class="field-group">
+          <div class="field">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Your first name" required />
+          </div>
+          <div class="field">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Your last name" required />
+          </div>
         </div>
+
         <div class="field">
-          <label>Last Name</label>
-          <input type="text" placeholder="Your last name" />
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Where should I send the Zoom link?" required />
         </div>
-      </div>
-      <div class="field">
-        <label>Email Address</label>
-        <input type="email" placeholder="Where should I send the Zoom link?" />
-      </div>
-      <div class="field">
-        <label>Are You Independent or Host Agency?</label>
-        <select>
-          <option value="">Select one</option>
-          <option>Independent agent</option>
-          <option>Host agency</option>
-          <option>Just getting started</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Do You Currently Have a Landing Page?</label>
-        <select>
-          <option value="">Select one</option>
-          <option>No — that's why I'm here</option>
-          <option>Yes but it's not working</option>
-          <option>I have a website but no dedicated inquiry page</option>
-          <option>Starting from scratch</option>
-        </select>
-      </div>
-      <div class="replay-upsell">
-        <input type="checkbox" id="replay" />
-        <label for="replay">Yes — notify me when the <strong>Session Replay ($27)</strong> is available. Replays drop within 48 hours after the live sessions end.</label>
-      </div>
-      <button class="btn-primary form-submit">Reserve My Free Seat</button>
-      <p class="form-fine">You'll receive your Zoom link within 24 hours. See you May 30. 🎒</p>
+
+        <div class="field">
+          <label for="agent_type">Are You Independent or Host Agency?</label>
+          <select id="agent_type" name="agent_type" required>
+            <option value="">Select one</option>
+            <option value="Independent agent">Independent agent</option>
+            <option value="Host agency">Host agency</option>
+            <option value="Just getting started">Just getting started</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="has_landing_page">Do You Currently Have a Landing Page?</label>
+          <select id="has_landing_page" name="has_landing_page" required>
+            <option value="">Select one</option>
+            <option value="No — that's why I'm here">No — that's why I'm here</option>
+            <option value="Yes but it's not working">Yes but it's not working</option>
+            <option value="I have a website but no dedicated inquiry page">I have a website but no dedicated inquiry page</option>
+            <option value="Starting from scratch">Starting from scratch</option>
+          </select>
+        </div>
+
+        <div class="replay-upsell">
+          <input type="checkbox" id="replay" name="wants_replay" value="Yes — notify me about the $27 replay" />
+          <label for="replay">Yes — notify me when the <strong>Session Replay ($27)</strong> is available. Replays drop within 48 hours after the live sessions end.</label>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit">Reserve My Free Seat</button>
+        <p class="form-fine">You'll receive your Zoom link within 24 hours. See you May 30. 🎒</p>
+
+      </form>
     </div>
   </div>
 
