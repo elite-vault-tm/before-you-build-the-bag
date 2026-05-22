@@ -553,46 +553,74 @@
   </div>
 
   <!-- REGISTER -->
-  <div class="register" id="register">
-    <div class="eyebrow" style="text-align:center;">Secure Your Spot</div>
-    <div class="h2">Two days.<br><em>One decision.</em></div>
-    <p class="register-sub">
-      Show up live and it is free. Miss it and grab the replay for $27.<br>
-      <strong>Either way, you stop looking unfinished online.</strong>
-    </p>
-
+  <div class="form-section" id="register">
+    <div class="section-label" style="text-align:center;">Register Now</div>
+    <h2>Two days.<br><em>One decision.</em></h2>
+    <p>Show up. Build it live. Leave with a brand and a page that works.</p>
     <div class="form-box">
       <form action="https://formspree.io/f/meedqqlb" method="POST">
         <input type="hidden" name="_subject" value="New Registration — Before You Build the Bag™" />
-
-        <div class="field">
-          <label for="first_name">First Name</label>
-          <input type="text" id="first_name" name="first_name" placeholder="Your first name" required />
+        <div class="field-group">
+          <div class="field">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Your first name" required />
+          </div>
+          <div class="field">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Your last name" required />
+          </div>
         </div>
-
         <div class="field">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="Where should I send the Zoom link?" required />
         </div>
-
         <div class="field">
-          <label for="who">What best describes you?</label>
-          <select id="who" name="who_you_are" required>
+          <label for="agent_type">What best describes you?</label>
+          <select id="agent_type" name="agent_type" required>
             <option value="">Select one</option>
-            <option>Service provider or entrepreneur</option>
-            <option>Content creator or influencer</option>
-            <option>Coach, consultant, or expert</option>
-            <option>Travel professional</option>
-            <option>Just getting started</option>
-            <option>Other</option>
+            <option value="Service provider or entrepreneur">Service provider or entrepreneur</option>
+            <option value="Content creator or influencer">Content creator or influencer</option>
+            <option value="Travel professional">Travel professional</option>
+            <option value="Just getting started">Just getting started</option>
+            <option value="Other">Other</option>
           </select>
         </div>
-
-        <button type="submit" class="btn-full">Save My Free Spot</button>
-        <p class="form-fine">
-          Zoom link arrives within 48 hours. 🎒<br>
-          Attending live is free. Replay access is $27 and available after.
-        </p>
+        <div class="field">
+          <label for="can_attend">Can You Make It May 30 &amp; 31?</label>
+          <select id="can_attend" name="can_attend" required>
+            <option value="">Select one</option>
+            <option value="Yes — I'll be there live">Yes — I'll be there live</option>
+            <option value="No — but I'd attend a future date">No — but I'd attend a future date</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>What's Your Main Goal Right Now? <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text-dim);font-size:10px;">(Check all that apply)</span></label>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:300;cursor:pointer;">
+              <input type="checkbox" name="goal[]" value="I want a landing page for a specific offer or service" style="margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;" />
+              I want a landing page for a specific offer or service
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:300;cursor:pointer;">
+              <input type="checkbox" name="goal[]" value="I want to build my brand and grow my own audience" style="margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;" />
+              I want to build my brand and grow my own audience
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:300;cursor:pointer;">
+              <input type="checkbox" name="goal[]" value="I need both — a page AND a warm market" style="margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;" />
+              I need both — a page AND a warm market
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:300;cursor:pointer;">
+              <input type="checkbox" name="goal[]" value="I'm just getting started and figuring it out" style="margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;" />
+              I'm just getting started and figuring it out
+            </label>
+          </div>
+        </div>
+        <div class="replay-upsell">
+          <input type="checkbox" id="replay" name="wants_replay" value="Yes — notify me about the $27 replay" />
+          <label for="replay">Yes — notify me when the <strong>Session Replay ($27)</strong> is available. Replays drop within 48 hours after the live sessions end.</label>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Reserve My Free Seat</button>
+        <p class="form-fine">You'll receive your Zoom link within 24 hours. See you May 30 at 11 AM EST. 🎒</p>
       </form>
     </div>
   </div>
